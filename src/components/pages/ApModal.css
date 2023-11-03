@@ -17,10 +17,8 @@
 }
 .modalContainer {
   position: fixed;
-  max-width: 470px;
   top: 50%;
   left: 50%;
-  width: 100%;
   z-index: 2147484002;
   padding: 10px 20px;
   background-color:white;

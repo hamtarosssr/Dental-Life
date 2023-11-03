@@ -1,6 +1,7 @@
 import "./Sclinic.css";
 import { useState } from "react";
 function Sclinic() {
+    console.log("print1");
     const [selectedOption, setSelectedOption] = useState(null);
     const [isActive, setIsActive] = useState(false);
     const options = [

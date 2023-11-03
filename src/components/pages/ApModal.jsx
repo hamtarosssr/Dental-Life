@@ -2,7 +2,7 @@ import "./ApModal.css";
 import React, { useState } from "react";
 import Sclinic from "./SClinic.jsx";
 import SclinicP2 from "./SClinicP2.jsx";
-
+import SclinicP3 from "./SClinicP3";
 function ApModal({ setOpenModal }) {
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -41,7 +41,7 @@ function ApModal({ setOpenModal }) {
         </div>
         {currentStep === 1 && <Sclinic />}
         {currentStep === 2 && <SclinicP2 />}
-        {/* {currentStep === 3 && <SclinicP3 />} */}
+        {currentStep === 3 && <SclinicP3 />}
         <div className="footer">
           {currentStep > 1 && (
             <button style={{backgroundColor : "#FFD89C" }} id="backBtn" onClick={handleBackClick}>
@@ -52,6 +52,12 @@ function ApModal({ setOpenModal }) {
           {currentStep < 3 && (
             <button style={{backgroundColor : "#FFD89C", justifyContent:"flex-end"}} id="continueBtn" onClick={handleContinueClick}>
               Next
+            </button>
+          )}
+
+          {currentStep === 3 && (
+            <button style={{backgroundColor : "#FFD89C", justifyContent:"flex-end"}} id="doneBtn" >
+              Done
             </button>
           )}
         </div>
