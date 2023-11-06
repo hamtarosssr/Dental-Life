@@ -2,22 +2,19 @@ import "./ApModal.css";
 import React, { useState } from "react";
 import Sclinic from "./SClinic.jsx";
 import SclinicP2 from "./SClinicP2.jsx";
-import SclinicP3 from "./SClinicP3";
+import SclinicP3 from "./SClinicP3.jsx";
 function ApModal({ setOpenModal }) {
   const [currentStep, setCurrentStep] = useState(1);
-
   const handleContinueClick = () => {
     if (currentStep < 3) {
       setCurrentStep(currentStep + 1);
     }
   };
-
   const handleBackClick = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
     }
   };
-
   return (
     <div className="modalBackground ">
       <div
@@ -26,7 +23,7 @@ function ApModal({ setOpenModal }) {
           setOpenModal(false);
         }}
       ></div>
-      <div className={`modalContainer ${currentStep !== 1 ? "hidden" : ""}`}>
+      <div className="modalContainer">
         <div className="titleCloseBtn">
           <button
             onClick={() => {
@@ -50,13 +47,12 @@ function ApModal({ setOpenModal }) {
           )}
           
           {currentStep < 3 && (
-            <button style={{backgroundColor : "#FFD89C", justifyContent:"flex-end"}} id="continueBtn" onClick={handleContinueClick}>
+            <button style={{backgroundColor : "#FFD89C"}} id="continueBtn" onClick={handleContinueClick}>
               Next
             </button>
           )}
-
           {currentStep === 3 && (
-            <button style={{backgroundColor : "#FFD89C", justifyContent:"flex-end"}} id="doneBtn" >
+            <button style={{backgroundColor : "#FFD89C"}} id="doneBtn" >
               Done
             </button>
           )}

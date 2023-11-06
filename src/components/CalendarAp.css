@@ -11,12 +11,11 @@
 
 .calendar-days {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(auto, 1fr));
 
 }
 
 .calendar-day-name {
-  font-size: 20px;
   color: #FFA45B;
   display: flex;
   align-items: center;
@@ -43,7 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 70%;
   background-color: #fffbf5;
   margin:2px ;
   border-radius: 10px;
@@ -53,7 +52,7 @@
 
 .calendar-day:hover{
   background-color: #FFD89C;
-  font-size: 24px;
+  font-size: 100%;
 }
 
 .CT-inGrid{
@@ -66,7 +65,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 50%;
   background-color: #fffbf5;
   margin:2px ;
   border-radius: 10px;
@@ -75,7 +74,7 @@
 }
 .time-AL:hover{
   background-color: #FFD89C;
-  font-size: 14px;
+  font-size: 55%;
 }
 .timeGrid{
   display: grid;
@@ -85,10 +84,40 @@
 .calendar-day.selected{
   background-color:#FFA45B;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 100%;
 }
 .time-AL.selected{
   background-color:#FFA45B;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 55%;
+}
+.time-AL.unavailable {
+  background-color: #d9534f;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 768px) {
+  .headCalen {
+    grid-template-columns: 1fr; 
+  }
+
+  .inGrid {
+    justify-content: center; 
+  }
+
+  .calendar-day-name{
+    font-size:40%
+  }
+  .inGrid button,
+  .headCalen h5,
+  .calendar-day,.calendar-day:hover,.calendar-day.selected{
+    font-size: 60%; 
+  }
+  .time-AL,.time-AL:hover,.time-AL.selected{
+    font-size:40%;
+  }
+  .timeGrid{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

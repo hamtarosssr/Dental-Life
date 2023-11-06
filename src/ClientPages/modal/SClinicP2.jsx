@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Sclinic.css";
 
 function SclinicP2() {
-    console.log("print1");
     const [selectedTreatment, setselectedTreatment] = useState(null);
     const [treatmentActive, settreatmentActive] = useState(false);
     const Treatment = [

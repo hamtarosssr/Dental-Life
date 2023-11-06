@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import "./pages/ApModal.jsx"
 function Nav(props) {
     return (
         <nav>

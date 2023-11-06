@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import chevronLeft from "/assets/chevron_left_FILL0_wght400_GRAD0_opsz24.png";
 import chevronRight from "/assets/chevron_right_FILL0_wght400_GRAD0_opsz24.png";
-import "./CalendarAp.css";
-import { renderCalendar } from '../data/RenderCalendar';
+import "./SDcalendar.css";
+import { renderCalendar } from '../../data/RenderCalendar';
 
 const timeAvailable = ["11:00 am", "11:30 am", "12:00 pm", "12:30 pm", "01:00 pm", "01:30 pm", "02:00 pm",
     "02:30 pm", "03:00 pm", "03:30 pm", "04:00 pm", "04:30 pm", "05:00 pm", "05:30 pm", "06:00 pm", "06:30 pm"];
 
 
-function Calendar({Time}) {
+function SDcalendar({Time}) {
     const  timenotavailable  = Time;
     const [currentDate, setCurrentDate] = useState(moment());
     const gendate = renderCalendar(currentDate);
@@ -34,9 +34,9 @@ function Calendar({Time}) {
 
     return (
         <div>
-            <div className="headCalen">
+            <div className="headCalenn">
                 <h5>{currentDate.format('MMMM YYYY')}</h5>
-                <div className="inGrid">
+                <div className="inGridd">
                     <button onClick={() => setCurrentDate(moment(currentDate).subtract(1, 'month'))} type="button">
                         <img src={chevronLeft} alt="Left Arrow" />
                     </button>
@@ -45,10 +45,10 @@ function Calendar({Time}) {
                     </button>
                 </div>
             </div>
-            <div className="CT-inGrid">
-                <div className="calendar-days">
+            <div className="CT-inGridd">
+                <div className="calendar-dayss">
                     {dayNames.map(day => (
-                        <div key={day} className="calendar-day-name">
+                        <div key={day} className="calendar-day-namee">
                             {day}
                         </div>
                     ))}
@@ -58,17 +58,17 @@ function Calendar({Time}) {
                         </div>
                     ))}
                     {gendate.date.map((date, index) => (
-                        <div key={gendate.id[index]} className={`calendar-day ${selectedDate === gendate.id[index] ? 'selected' : ''}`}
+                        <div key={gendate.id[index]} className={`calendar-dayy ${selectedDate === gendate.id[index] ? 'selectedd' : ''}`}
                             onClick={() => handleDateClick(gendate.id[index])}>
                             {date}
                         </div>
                     ))}
                 </div>
-                <div className="timeGrid">
+                <div className="timeGridd">
                     {timeAvailable.map(time => (
                         <div
                             key={time}
-                            className={`time-AL  ${selectedTime === time ? 'selected' : ''} ${isTimeSlotAvailable(time) ? '' : 'unavailable'}`}
+                            className={`time-ALL  ${selectedTime === time ? 'selectedd' : ''} ${isTimeSlotAvailable(time) ? '' : 'unavailablee'}`}
                             onClick={() => {
                                 if (isTimeSlotAvailable(time)) {
                                     handleTimeClick(time);
@@ -83,4 +83,4 @@ function Calendar({Time}) {
     );
 }
 
-export default Calendar;
+export default SDcalendar;

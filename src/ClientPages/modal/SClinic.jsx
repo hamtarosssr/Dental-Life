@@ -1,23 +1,12 @@
 import "./Sclinic.css";
 import { useState } from "react";
+import {useSelector} from 'react-redux'
 function Sclinic() {
-    console.log("print1");
+    const clinic = useSelector((state) => state.Clinic.name);
     const [selectedOption, setSelectedOption] = useState(null);
     const [isActive, setIsActive] = useState(false);
-    const options = [
-        "Option 1",
-        "Option 2",
-        "Option 3",
-        "Option 1",
-        "Option 2",
-        "Option 3",
-        "Option 1",
-        "Option 2",
-        "Option 3",
-        "Option 1",
-        "Option 2",
-        "Option 3",
-    ];
+    const options = clinic
+    console.log(options)
 
     const toggleDropdown = () => {
         setIsActive(!isActive);
